@@ -105,6 +105,8 @@ These enhancements highlight Stack AI's tiered approach to feature access -- whi
 
 ## **Stack AI vs. n8n**
 
+![Stack AI Interface](./images/Comparison Chart.png)
+*Caption: The Comparison chart for stack AI and n8n*
 
 ## **Use Cases**
 
