@@ -1,8 +1,10 @@
 # **Stack AI Platform Review: Experience and Insights from an Implementation Perspective**
 
-![](./images/Cover.png)
-
-_Figure1. Stack AI, Retrieved from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.stack-ai.com%2Fpricing&psig=AOvVaw1f-3GlX68Iq48sS7qqYdmL&ust=1747098311446000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJCxhcTenI0DFQAAAAAdAAAAABAI_
+<p align="center">
+  <img src="./images/cover.png" width="600">
+  <br>
+  <em>Figure 1: Stack AI, Retrieved from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.stack-ai.com%2Fpricing&psig=AOvVaw1f-3GlX68Iq48sS7qqYdmL&ust=1747098311446000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJCxhcTenI0DFQAAAAAdAAAAABAI</em>
+</p>
 
 
 ## **Introduction**
@@ -28,23 +30,27 @@ The centerpiece of Stack AI is its visual interface that allows users to constru
 
 ### **Integration with Multiple AI Models**
 
-Stack AI provides access to a variety of large language models from different providers. According to their comparison with Microsoft Copilot Studio, "Stack AI integrates with all the leading LLMs on the market, including OpenAI, Anthropic, Google, Meta and many others" [Microsoft Copilot Studio vs. Stack AI: A Comprehensive Comparison | Stack AI · The Platform for Enterprise AI](https://www.stack-ai.com/blog/microsoft-copilot-studio-versus-stack-ai). This flexibility allows users to select the optimal model for specific use cases.
+Stack AI provides access to a variety of large language models from different providers. According to their comparison with Microsoft Copilot Studio, "Stack AI integrates with all the leading LLMs on the market, including OpenAI, Anthropic, Google, Meta and many others" [Microsoft Copilot Studio vs. Stack AI: A Comprehensive Comparison](https://www.stack-ai.com/blog/microsoft-copilot-studio-versus-stack-ai). This flexibility allows users to select the optimal model for specific use cases.
 
 ### **Knowledge Base Creation Tools**
 
 The platform offers capabilities for creating and managing knowledge bases from various data sources. These knowledge bases serve as the foundation for AI applications, providing the context necessary for generating accurate and relevant responses.
 
-![](./images/Knowledge.png)
-
-_Figure2. Knowledge base options_
+<p align="center">
+  <img src="./images/Knowledge.png" width="60%", height=auto, max-height: 400px>
+  <br>
+  <em>Figure 2: Knowledge base options</em>
+</p>
 
 ### **Ready-to-Use Templates**
 
 Stack AI provides a library of pre-built templates based on real-world use cases, which allow users to achieve immediate results and customize to their needs. During my project, I found these templates valuable for quickly establishing a functional foundation.
 
-![](./images/Templates.png)
-
-_Figure3. Templates provided by Stack AI_
+<p align="center">
+  <img src="./images/Templates.png" width="60%", height=auto, max-height: 400px>
+  <br>
+  <em>Figure 3: Templates provided by Stack AI</em>
+</p>
 
 ### **Deployment Options**
 
@@ -66,17 +72,21 @@ Building this system with Stack AI involved a straightforward workflow leveragin
 
 The first step was establishing a knowledge base of job listings using Stack AI's Website node. This involved setting up connections to retrieve job data from seek.au, organizing the information into a structured format for efficient querying, and creating a workflow for maintaining up-to-date job information.
 
-![](./images/KnowledgeBase.png)
-
-_Figure4. Knowledge base to provide context_
+<p align="center">
+  <img src="./images/KnowledgeBase.png" width="60%", height=auto, max-height: 400px>
+  <br>
+  <em>Figure 4: Knowledge base to provide context</em>
+</p>
 
 ### **AI Model Integration**
 
 The core intelligence of the system relied on Stack AI's LLM integration. I implemented a workflow to analyze resume documents using Claude or GPT models and created system prompts to extract relevant skills and experience information. This was followed by developing matching logic to compare resume content against job requirements and setting up a recommendation system to rank and explain potential matches.
 
-![](./images/AIModel.png)
-
-_Figure5.Model integration_
+<p align="center">
+  <img src="./images/AIModel.png" width="60%", height=auto, max-height: 400px>
+  <br>
+  <em>Figure 5: Model Integration</em>
+</p>
 
 ### **User Interface**
 
@@ -84,9 +94,11 @@ For the user experience, I configured a simple upload mechanism for resumes and 
 
 The entire implementation was completed using Stack AI's visual workflow builder without requiring custom code, demonstrating the platform's accessibility for non-technical users. While simple, this prototype effectively demonstrated how Stack AI can be used to create functional AI applications that solve real business problems.
 
-![](./images/UserInput.png)
-
-_Figure6. User input node_
+<p align="center">
+  <img src="./images/UserInput.png" width="60%", height=auto, max-height: 400px>
+  <br>
+  <em>Figure 6: User input node</em>
+</p>
 
 ## **User Experience with Stack AI**
 
@@ -130,9 +142,11 @@ These enhancements highlight Stack AI's tiered approach to feature access -- whi
 
 ## **Stack AI vs. n8n**
 
-![](./images/ComparisonChart.png)
-
-_FigureThe Comparison chart for stack AI and n8n_
+<p align="center">
+  <img src="./images/COmparisonChart.png" width="60%", height=auto, max-height: 400px>
+  <br>
+  <em>Figure 7: The Comparison chart for stack AI and n8n</em>
+</p>
 
 ## **Use Cases**
 
