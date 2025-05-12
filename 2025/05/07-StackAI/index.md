@@ -143,7 +143,7 @@ These enhancements highlight Stack AI's tiered approach to feature access -- whi
 ## **Stack AI vs. n8n**
 
 <p align="center">
-  <img src="./images/COmparisonChart.png" width="60%", height=auto, max-height: 400px>
+  <img src="./images/ComparisonChart.png" width="60%", height=auto, max-height: 400px>
   <br>
   <em>Figure 7: The Comparison chart for stack AI and n8n</em>
 </p>
