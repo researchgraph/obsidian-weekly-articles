@@ -58,7 +58,7 @@ The API key serves as your authentication token when Claude makes requests to Br
 
 Now that you have your Brave Search API key, let's configure Claude to use it. 
 
-### Method 1: Using the Claude Desktop App UI (Recommended for Beginners)
+### Steps:
 
 1. Open the Claude desktop app and go to Settings
 2. Navigate to the "Developer" tab
