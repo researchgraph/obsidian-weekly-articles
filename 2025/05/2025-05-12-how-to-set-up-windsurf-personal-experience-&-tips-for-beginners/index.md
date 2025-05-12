@@ -1,5 +1,13 @@
---- 
-title: " How to Use and set up Windsurf: Personal Experience & Tips for Beginners (In Windows)" date: 2025-05-12 categories: - "artificialintelligence" tags: - "ai" - "windsurfai" - "IDE" coverImage: "title_image.png" 
+---
+title: "How to Use and set up Windsurf: Personal Experience & Tips for Beginners (In Windows)"
+date: 2025-05-12
+categories: 
+  - "artificialintelligence"
+tags:
+  - "ai"
+  - "windsurfai"
+  - "ide"
+coverImage: "images/title_image.png"
 ---
 
 ## How to Use and set up Windsurf: Personal Experience & Tips for Beginners (In Windows)
