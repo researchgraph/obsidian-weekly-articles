@@ -13,12 +13,12 @@ The tech industry is witnessing a significant shift with the rise of AI workflow
 
 Stack AI represents a new generation of enterprise AI platforms specifically designed for creating sophisticated AI workflows through a visual, no-code approach.
 
-This blog aims to share hands-on experience about building a job recommender system using Stack AI's knowledge base workflow. I'll provide a balanced perspective that covers both the strengths and limitations I encountered throughout the development process. By documenting this journey, I hope to offer practical insights for others considering similar projects or exploring AI workflow platforms.
+This blog aims to share hands-on experience building a job recommender system using Stack AI's knowledge base workflow. I'll provide a balanced perspective that covers both the strengths and limitations I encountered throughout the development process. By documenting this journey, I hope to offer practical insights for others considering similar projects or exploring AI workflow platforms.
 
 ## **What is Stack AI?**
 
 Stack AI was co-founded by Bernardo Aceituno and Antoni Rosinol, both former PhD students at MIT. According to industry reporting, the founders identified the potential of large language models before ChatGPT's release, recognizing a market gap for tools that could effectively combine data with these powerful AI models.
-At its foundation, Stack AI functions as a low-code workflow automation tool specifically designed for AI applications. The platform's architecture enables users to build AI-driven workflows through an intuitive drag-and-drop interface[Stack AI: What It Is and Best Alternatives [Review]](https://www.voiceflow.com/blog/stack-ai).
+At its foundation, Stack AI functions as a low-code workflow automation tool specifically designed for AI applications. The platform's architecture enables users to build AI-driven workflows through an intuitive drag-and-drop interface. [Stack AI: What It Is and Best Alternatives [Review]](https://www.voiceflow.com/blog/stack-ai).
 
 ## **Key Features of the Platform**
 
