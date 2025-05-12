@@ -1,5 +1,10 @@
 # **Stack AI Platform Review: Experience and Insights from an Implementation Perspective**
 
+![](./images/Cover.png)
+
+_Figure1. Stack AI, Retrieved from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.stack-ai.com%2Fpricing&psig=AOvVaw1f-3GlX68Iq48sS7qqYdmL&ust=1747098311446000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJCxhcTenI0DFQAAAAAdAAAAABAI_
+
+
 ## **Introduction**
 
 The tech industry is witnessing a significant shift with the rise of AI workflow platforms, tools that enable organizations to implement artificial intelligence solutions without requiring specialized development teams. These platforms are transforming how businesses approach AI adoption, making powerful capabilities accessible to teams regardless of their coding expertise.
@@ -29,9 +34,17 @@ Stack AI provides access to a variety of large language models from different pr
 
 The platform offers capabilities for creating and managing knowledge bases from various data sources. These knowledge bases serve as the foundation for AI applications, providing the context necessary for generating accurate and relevant responses.
 
+![](./images/Knowledge.png)
+
+_Figure2. Knowledge base options_
+
 ### **Ready-to-Use Templates**
 
 Stack AI provides a library of pre-built templates based on real-world use cases, which allow users to achieve immediate results and customize to their needs. During my project, I found these templates valuable for quickly establishing a functional foundation.
+
+![](./images/Templates.png)
+
+_Figure3. Templates provided by Stack AI_
 
 ### **Deployment Options**
 
@@ -53,15 +66,27 @@ Building this system with Stack AI involved a straightforward workflow leveragin
 
 The first step was establishing a knowledge base of job listings using Stack AI's Website node. This involved setting up connections to retrieve job data from seek.au, organizing the information into a structured format for efficient querying, and creating a workflow for maintaining up-to-date job information.
 
+![](./images/KnowledgeBase.png)
+
+_Figure4. Knowledge base to provide context_
+
 ### **AI Model Integration**
 
 The core intelligence of the system relied on Stack AI's LLM integration. I implemented a workflow to analyze resume documents using Claude or GPT models and created system prompts to extract relevant skills and experience information. This was followed by developing matching logic to compare resume content against job requirements and setting up a recommendation system to rank and explain potential matches.
+
+![](./images/AIModel.png)
+
+_Figure5.Model integration_
 
 ### **User Interface**
 
 For the user experience, I configured a simple upload mechanism for resumes and designed a clear presentation format for job recommendations. The interface included explanations of why each position was recommended along with suggestions for improving job applications to better match requirements.
 
 The entire implementation was completed using Stack AI's visual workflow builder without requiring custom code, demonstrating the platform's accessibility for non-technical users. While simple, this prototype effectively demonstrated how Stack AI can be used to create functional AI applications that solve real business problems.
+
+![](./images/UserInput.png)
+
+_Figure6. User input node_
 
 ## **User Experience with Stack AI**
 
@@ -105,8 +130,9 @@ These enhancements highlight Stack AI's tiered approach to feature access -- whi
 
 ## **Stack AI vs. n8n**
 
-![Stack AI Interface](./images/Comparison Chart.png)
-*Caption: The Comparison chart for stack AI and n8n*
+![](./images/ComparisonChart.png)
+
+_FigureThe Comparison chart for stack AI and n8n_
 
 ## **Use Cases**
 
@@ -115,13 +141,13 @@ Stack AI serves a wide range of enterprise applications:
 * **Intelligent Assistants and Chatbots**: Build customized AI agents that answer employee questions about company policies or help customers navigate product offerings. These can be deployed across channels including websites, Slack, or WhatsApp. 
 * **Document Processing**: Automatically analyze contracts, extract key terms, and generate summaries from complex documents. Stack AI's template library includes specialized tools for RFP responses and contract analysis.
 
-* **Database Insights**: Connect AI models to organizational databases for natural language querying of structured information.
+* **Database Insights**: Connect AI models to organizational databases for natural language querying of structured information.[Stack AI · The Platform for Enterprise AI](https://www.stack-ai.com/enterprise-ai-solutions).
 
 * **Content Generation**: Create workflows that draft personalized emails, marketing materials, or technical documentation following specific guidelines. Users can build agents that generate content in consistent brand voice across multiple formats.
 
-* **Healthcare Systems**: Develop HIPAA-compliant applications that access patient history and treatment plans while maintaining privacy requirements. Healthcare providers can query an AI system with questions about patient history, treatment plans, and progress.
+* **Healthcare Systems**: Develop HIPAA-compliant applications that access patient history and treatment plans while maintaining privacy requirements. Healthcare providers can query an AI system with questions about patient history, treatment plans, and progress.[How to build a HIPAA-compliant AI Chatbot](https://www.stack-ai.com/blog/how-to-build-a-hipaa-compliant-chatbot).
 
-* **Process Automation**: Streamline back-office functions and routine business processes to improve operational efficiency. Stack AI enables teams to automate workflows "allowing professionals to focus on impactful tasks that drive business growth".
+* **Process Automation**: Streamline back-office functions and routine business processes to improve operational efficiency. Stack AI enables teams to automate workflows "allowing professionals to focus on impactful tasks that drive business growth".[Build AI Agents with the Enterprise AI Platform | Stack AI](https://www.stack-ai.com/).
 
 
 ## **Conclusion**
@@ -131,3 +157,15 @@ Stack AI offers a promising platform for businesses seeking to implement AI solu
 Despite the free tier's limitations in storage, runs, and feature availability, Stack AI demonstrated considerable potential for prototyping AI workflows. For production environments, the premium plans would be necessary to unlock essential features. For organizations looking to deploy AI solutions quickly without expanding their technical teams, Stack AI represents a valuable balance of accessibility and capability.
 
 Despite the free tier's limitations in storage, runs, and feature availability, Stack AI demonstrated considerable potential for prototyping AI workflows. For production environments, the premium plans would be necessary to unlock essential features. For organizations looking to deploy AI solutions quickly without expanding their technical teams, Stack AI represents a valuable balance of accessibility and capability.
+
+## **References**
+
+1. Stack AI. (2025). *Build AI Agents with the Enterprise AI Platform*. Retrieved from https://www.stack-ai.com/
+
+2. Stack AI. (2025). *Microsoft Copilot Studio vs. Stack AI: A Comprehensive Comparison*. Retrieved from https://www.stack-ai.com/blog/microsoft-copilot-studio-versus-stack-ai
+
+3. Stack AI. (2025). *AI Agents with StackAI*. Retrieved from https://www.stack-ai.com/enterprise-ai-solutions
+
+4. Stack AI. (2025). *How to build a HIPAA-compliant AI Chatbot*. Retrieved from https://www.stack-ai.com/blog/how-to-build-a-hipaa-compliant-chatbot
+
+5. Voiceflow. (2025). *Stack AI: What It Is and Best Alternatives [Review]*. Retrieved from https://www.voiceflow.com/blog/stack-ai
