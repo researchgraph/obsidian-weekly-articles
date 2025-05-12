@@ -28,6 +28,12 @@ Based on my research and hands-on experience, Stack AI offers several distinctiv
 
 The centerpiece of Stack AI is its visual interface that allows users to construct AI workflows without writing code. When testing the platform, I found this interface particularly intuitive, with clearly labeled components and a logical organization that makes it approachable even for those without technical backgrounds.
 
+<p align="center">
+  <img src="./images/Interface.png" width="60%", height=auto, max-height: 400px>
+  <br>
+  <em>Figure 2: Project interface of StackAI</em>
+</p>
+
 ### **Integration with Multiple AI Models**
 
 Stack AI provides access to a variety of large language models from different providers. According to their comparison with Microsoft Copilot Studio, "Stack AI integrates with all the leading LLMs on the market, including OpenAI, Anthropic, Google, Meta and many others" [Microsoft Copilot Studio vs. Stack AI: A Comprehensive Comparison](https://www.stack-ai.com/blog/microsoft-copilot-studio-versus-stack-ai). This flexibility allows users to select the optimal model for specific use cases.
@@ -39,7 +45,7 @@ The platform offers capabilities for creating and managing knowledge bases from 
 <p align="center">
   <img src="./images/Knowledge.png" width="60%", height=auto, max-height: 400px>
   <br>
-  <em>Figure 2: Knowledge base options</em>
+  <em>Figure 3: Knowledge base options</em>
 </p>
 
 ### **Ready-to-Use Templates**
@@ -49,7 +55,7 @@ Stack AI provides a library of pre-built templates based on real-world use cases
 <p align="center">
   <img src="./images/Templates.png" width="60%", height=auto, max-height: 400px>
   <br>
-  <em>Figure 3: Templates provided by Stack AI</em>
+  <em>Figure 4: Templates provided by Stack AI</em>
 </p>
 
 ### **Deployment Options**
@@ -75,7 +81,7 @@ The first step was establishing a knowledge base of job listings using Stack AI'
 <p align="center">
   <img src="./images/KnowledgeBase.png" width="60%", height=auto, max-height: 400px>
   <br>
-  <em>Figure 4: Knowledge base to provide context</em>
+  <em>Figure 5: Knowledge base to provide context</em>
 </p>
 
 ### **AI Model Integration**
@@ -85,7 +91,7 @@ The core intelligence of the system relied on Stack AI's LLM integration. I impl
 <p align="center">
   <img src="./images/AIModel.png" width="60%", height=auto, max-height: 400px>
   <br>
-  <em>Figure 5: Model Integration</em>
+  <em>Figure 6: Model Integration</em>
 </p>
 
 ### **User Interface**
@@ -97,7 +103,7 @@ The entire implementation was completed using Stack AI's visual workflow builder
 <p align="center">
   <img src="./images/UserInput.png" width="60%", height=auto, max-height: 400px>
   <br>
-  <em>Figure 6: User input node</em>
+  <em>Figure 7: User input node</em>
 </p>
 
 ## **User Experience with Stack AI**
@@ -145,7 +151,7 @@ These enhancements highlight Stack AI's tiered approach to feature access -- whi
 <p align="center">
   <img src="./images/ComparisonChart.png" width="60%", height=auto, max-height: 400px>
   <br>
-  <em>Figure 7: The Comparison chart for stack AI and n8n</em>
+  <em>Figure 8: The Comparison chart for stack AI and n8n</em>
 </p>
 
 ## **Use Cases**
