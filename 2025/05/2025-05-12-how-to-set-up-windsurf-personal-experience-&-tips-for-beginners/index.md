@@ -128,8 +128,3 @@ And there you go! That is my personal experience when using Windsurf to build an
 
 ## Conclusion
 Windsurf is a game-changer for developers, offering AI-driven features that simplify coding and boost productivity. By following the setup steps, exploring its tools like Cascade and GPT 4.1, and applying beginner tips, you can harness its full potential. The example of building a research paper app with an AI assistant illustrates how such tools, combined with Windsurf, can streamline development tasks. I encourage you to try Windsurf for your next project and experience its benefits firsthand.
-
-**References:** 
-- https://windsurf.com
-- https://openalex.org
-
