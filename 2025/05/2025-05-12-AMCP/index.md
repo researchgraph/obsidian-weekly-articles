@@ -1,6 +1,7 @@
 # Building a Simple Internet Search App Using Anthropic Model Context Protocol
 
 ![](<images/amcp cover image.png>)
+Created using DALL.E on 12 May 2025
 
 ## Author
 Aditya Arora (ORCID: 0009-0006-5800-1198)
@@ -42,12 +43,13 @@ Let's start by obtaining your Brave Search API key:
    - Verify your email address through the link sent to your inbox
 
 2. **Obtain Your API Key**:
-   - After logging in, go to https://api-dashboard.search.brave.com/app/keys
+   - Select and subscribe to a appropriate services (Web Search is what we need for this tutorial)
+   - Go to https://api-dashboard.search.brave.com/app/keys
    - Click on "Create New API Key"
    - Name your key (e.g., "Claude Integration")
-   - Select the appropriate services (Web Search is what we need for this tutorial)
    - Copy your new API key and store it securely—you'll need it when configuring Claude
 
+![](<images/Screenshot 2025-05-12 at 10.31.30 am.png>)
 
 The API key serves as your authentication token when Claude makes requests to Brave Search on your behalf.
 
@@ -95,7 +97,12 @@ Now that you've set up the integration, it's time to test it! Here are some effe
 
 2. **Look for Search Indicators**:
    - When Claude performs a search, you should see a visual indicator or message showing that it's querying Brave Search
+
+    ![](<images/Screenshot 2025-05-12 at 2.14.12 pm.png>)
+
    - The response should include attribution to Brave Search or otherwise indicate that external information was used
+
+   ![](<images/Screenshot 2025-05-12 at 2.19.15 pm.png>)
 
 3. **Troubleshooting Common Issues**:
    - If searches aren't working, check your API key validity
