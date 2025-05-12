@@ -64,10 +64,9 @@ Now that you have your Brave Search API key, let's configure Claude to use it.
 2. Navigate to the "Developer" tab
 3. Click on Edit configuration. It will create a ‘claude_desktop_config.json’ file at the proper location. 
 4. Or you can manually create this by navigating to the configuration directory:
-Windows: %APPDATA%\Claude\
-macOS: ~/Library/Application Support/Claude/
-Linux: ~/.config/Claude/
-5. Create or edit a file named claude_desktop_config.json
+ - Windows: %APPDATA%\Claude\
+ - macOS: ~/Library/Application Support/Claude/
+ - Linux: ~/.config/Claude/
 6. Add the following JSON structure (replace YOUR_API_KEY_HERE with your actual API key):
 ```
 {
