@@ -124,3 +124,7 @@ The integration we've built today is just the beginning. As AMCP continues to ev
 By starting with this simple integration, you've taken an important first step into the expanding ecosystem of AI-powered tools. The combination of Claude's intelligence with external data sources opens up exciting possibilities for productivity, learning, and discovery.
 
 Remember to periodically check for updates to both Claude and Brave Search, as new features and improvements may enhance your experience even further. Happy searching!
+
+## References
+ - https://github.com/modelcontextprotocol/servers
+ - https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search
