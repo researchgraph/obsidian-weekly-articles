@@ -7,7 +7,7 @@ tags:
   - "ai"
   - "windsurfai"
   - "ide"
-coverImage: "images/title_image.png"
+coverImage: "title_image.png"
 ---
 
 ## How to Use and set up Windsurf: Personal Experience & Tips for Beginners (In Windows)
