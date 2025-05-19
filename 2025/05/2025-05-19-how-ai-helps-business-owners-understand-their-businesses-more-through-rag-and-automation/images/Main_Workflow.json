@@ -1,0 +1,739 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -260,
+        160
+      ],
+      "id": "f11bb6b5-ecb7-4490-b817-c842221f9204",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "=1. Prompt by relevance AI\n# Role\nAct as a Business Accounting Automation Agent, designed to assist business owners by retrieving and analyzing accounting data from PostgreSQL databases based on their queries.\n\n# Task\nRespond to business owners' inquiries about their accounting data, such as total profits on specific dates, sales of specific products, and comparisons of average order values over different periods. Use SQL queries to extract and calculate the requested information from the orders and line_items tables within the PostgreSQL databases. Present the findings in a clear, concise, and business-friendly manner.\n\n## Specifics\n- Understand the business owner's query and determine the most relevant SQL query to execute.\n- If order_state is null, it means the customer have not paid yet\n- Use the \"Invoice_vector\" to retrieve invoice data from postgre vector store.\n- Use the \"Get Table\" tool to familiarize yourself with the database schema if necessary before formulating complex queries.\n- Execute the formulated SQL query using the \"Execute Query\" tool to retrieve the requested data.\n- Present the data in a professional, approachable manner, offering brief insights or context where appropriate.\n- Directly acknowledge the business owner's question before providing the answer, don't use programming jargon.\n\n# Tools\nYou have access to two tools to assist in data retrieval and analysis:\n1. **Get Table**: Use this tool to retrieve table structure and sample data from the PostgreSQL databases to understand the schema of the orders and line_items tables.\n2. **Execute Query**: After formulating the appropriate SQL query, use this tool to run the query against the PostgreSQL databases and retrieve the requested information.\n3. **Invoice Vector**: Use this tool to retrieve business spending from pgvector.\n\n# Database Structure\n1. orders table with columns: id, customer_name, order_date, order_state, total_amount, total_tax, total_discount, payment_type\n\n2. line_items table with columns: id, order_id, product_name, variation_name, quantity, base_price, total_price, total_tax\n\n# Examples\nQ: What was our total profit for January 25, 2025?\nA: I've analyzed the transactions from January 25, 2025. The total profit for that day was $3,842.75, calculated from 47 orders with 126 line items. This represents a 12% increase compared to the previous day.\n\nQ: How many units of our premium product did we sell last week?\nA: I've checked the sales data for the past week (January 15-21, 2025). Your premium product \"Ultra Widget Pro\" sold 78 units, generating $15,600 in revenue. This accounts for approximately 22% of your total revenue for the week.\n\nQ: What's our average order value for this month compared to last month?\nA: I've calculated your average order values:\n- Current month (January 2025): $127.50 per order\n- Previous month (December 2024): $112.80 per order\n\nThis represents a 13% increase in average order value. The increase appears to be driven by higher sales of your premium product line, which has grown by 18% compared to last month.\n\n# Notes\nStyle and Tone:\n- Maintain a professional but approachable demeanor, akin to a helpful financial analyst.\n- Use clear, concise language to explain financial data, ensuring it is easy for the business owner to understand.\n- Organize numerical information neatly, making it straightforward to read and interpret.\n- Provide direct answers to the business owner's questions, followed by any relevant insights or context regarding the data.\n- For additional context, here is the current date / time: {{ $now }}\n\nBehaviors to Avoid:\n- Refrain from using complex database or SQL jargon when presenting results.\n- Avoid offering business advice unless explicitly requested by the business owner.\n- Do not speculate on financial data not present in the database.\n- Ensure sensitive financial information is only communicated to the authorized business owner.\n- Avoid performing calculations that require data outside the orders and line_items tables.\n- Keep explanations of SQL query constructions brief and only provide them if asked.\n- Do not adopt a casual or informal tone when discussing financial information."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        -460,
+        520
+      ],
+      "id": "1196658d-1915-4d9f-880c-e5e5ad1fb4e5",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -680,
+        520
+      ],
+      "id": "5199f93e-67b3-4981-ab0f-1d50e5a76523",
+      "name": "When chat message received",
+      "webhookId": "b1beef99-6e30-4098-b1af-7e94f74c58b0"
+    },
+    {
+      "parameters": {
+        "name": "Execute_query",
+        "description": "Call this tool to execute a query. Remember that it should be in a postgreSQL query structure.",
+        "workflowId": {
+          "__rl": true,
+          "value": "7iueSiTLjdDCnDB4",
+          "mode": "list",
+          "cachedResultName": "Execute query"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.1,
+      "position": [
+        -280,
+        740
+      ],
+      "id": "157ac980-e6de-497f-9925-d8ee0664f245",
+      "name": "Execute query"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-pro-preview-03-25",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        740
+      ],
+      "id": "4dd4d4a3-bf0b-4ec3-b8b2-c47607515424",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "cVfR7BxeeEriJCAs",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/text-embedding-004"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        920
+      ],
+      "id": "fdf129ae-52f0-48e9-ae5c-f85000bc5851",
+      "name": "Embeddings Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "cVfR7BxeeEriJCAs",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 3
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -420,
+        740
+      ],
+      "id": "c7b8641c-4598-411e-a207-ff257e29c09c",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "invoice_vector",
+        "toolDescription": "Get purchase invoice data from postgre vector store",
+        "tableName": "invoices",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+      "typeVersion": 1.1,
+      "position": [
+        -160,
+        740
+      ],
+      "id": "82df7f70-6b23-407d-8fa7-7d332fe9e6a8",
+      "name": "PGVector",
+      "credentials": {
+        "postgres": {
+          "id": "sxNHbBZigeezOuLl",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 20
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1120,
+        160
+      ],
+      "id": "35b0263f-fb23-48c4-b212-6d0d1cf1ad5c",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://connect.squareupsandbox.com/v2/orders/search",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer EAAAlwjV-aVcNf3LLT3W8Q8e-kpgoR65Ct8j6tlE0ERFnrTayyeDKHeE2wdIeIIs"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"return_entries\": false,\n    \"location_ids\": [\n      \"L2AE5RCTG32WN\"\n    ],\n    \"query\": {\n      \"filter\": {\n        \"date_time_filter\": {\n          \"created_at\": {\n            \"start_at\": \"2025-04-24T00:00:00.0Z\",\n            \"end_at\": \"{{ $json.date[0] }}T23:59:59.0Z\"\n          }\n        }\n      },\n      \"sort\": {\n        \"sort_field\": \"CREATED_AT\",\n        \"sort_order\": \"ASC\"\n      }\n    }\n  } ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -700,
+        160
+      ],
+      "id": "314250fe-3ba5-432f-9419-120658069c2a",
+      "name": "Getting the Data from the business' Square account"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "orders",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        160
+      ],
+      "id": "aabc4766-334c-4883-b95e-96a1736ce1b8",
+      "name": "Split Out the items from square"
+    },
+    {
+      "parameters": {
+        "jsCode": "const loopItem = $('Loop Over Items').first().json;\n\nreturn $input.all().map(item => {\n  const json = { ...item.json };\n\n  json.order_id = loopItem.id;\n\n  if (json.base_price_money?.amount !== undefined) {\n    json.base_price_money.amount = json.base_price_money.amount / 100;\n  }\n\n  if (json.total_money?.amount !== undefined) {\n    json.total_money.amount = json.total_money.amount / 100;\n  }\n\n  if (json.total_tax_money?.amount !== undefined) {\n    json.total_tax_money.amount = json.total_tax_money.amount / 100;\n  }\n\n  return { json };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        180
+      ],
+      "id": "b880646e-fa48-42d0-b468-59e8ef2db5a7",
+      "name": "Parsing attributes that revolves with money from each items"
+    },
+    {
+      "parameters": {
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "line_items",
+          "mode": "list",
+          "cachedResultName": "line_items"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "quantity": "={{ $json.quantity }}",
+            "base_price": "={{ $json.base_price_money.amount }}",
+            "total_price": "={{ $json.total_money.amount }}",
+            "total_tax": "={{ $json.total_tax_money.amount }}",
+            "id": "={{ $json.uid }}",
+            "order_id": "={{ $json.order_id }}",
+            "variation_name": "={{ $json.variation_name }}",
+            "product_name": "={{ $json.name }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "order_id",
+              "displayName": "order_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "product_name",
+              "displayName": "product_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "variation_name",
+              "displayName": "variation_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "quantity",
+              "displayName": "quantity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "base_price",
+              "displayName": "base_price",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_price",
+              "displayName": "total_price",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_tax",
+              "displayName": "total_tax",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "skipOnConflict": true
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        400,
+        180
+      ],
+      "id": "bd2408cd-c5e6-4ba3-ba62-0cd08ca945da",
+      "name": "Insert line item to the PostgreSQL Database",
+      "credentials": {
+        "postgres": {
+          "id": "sxNHbBZigeezOuLl",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://connect.squareupsandbox.com/v2/payments/{{$json.tenders[0].payment_id}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer EAAAlwjV-aVcNf3LLT3W8Q8e-kpgoR65Ct8j6tlE0ERFnrTayyeDKHeE2wdIeIIs"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "200e7d4b-989d-495c-8ea5-3e8857a8f2d5",
+      "name": "Get payment status (success or not)"
+    },
+    {
+      "parameters": {
+        "jsCode": "return $('Loop Over Items').all().map(item => {\n  const json = { ...item.json };\n\n  if (json.created_at) {\n    json.created_at = json.created_at.split('T')[0];\n  }\n\n  if (json.total_tax_money?.amount !== undefined) {\n    json.total_tax_money.amount = json.total_tax_money.amount / 100;\n  }\n\n  if (json.total_money?.amount !== undefined) {\n    json.total_money.amount = json.total_money.amount / 100;\n  }\n\n  if (json.total_discount_money?.amount !== undefined) {\n    json.total_discount_money.amount = json.total_discount_money.amount / 100;\n  }\n\n  return { json };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "id": "52ed4b84-343d-4cea-b1e8-c6d7580c5fc3",
+      "name": "Parsing attributes that revolves with money from each items1"
+    },
+    {
+      "parameters": {
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "orders",
+          "mode": "list",
+          "cachedResultName": "orders"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "total_amount": "={{ $json.total_money.amount }}",
+            "total_tax": "={{ $json.total_tax_money.amount }}",
+            "total_discount": "={{ $('Parsing attributes that revolves with money from each items1').item.json.net_amounts.discount_money.amount }}",
+            "id": "={{ $('Parsing attributes that revolves with money from each items1').item.json.id }}",
+            "customer_name": "={{ $('Parsing attributes that revolves with money from each items1').item.json.fulfillments[0].pickup_details.recipient.display_name }}",
+            "payment_type": "={{ $('Parsing attributes that revolves with money from each items1').item.json.tenders[0].type }}",
+            "order_date": "={{ $('Parsing attributes that revolves with money from each items1').item.json.created_at }}",
+            "order_state": "={{ $('Get payment status (success or not)').item.json.payment.status }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "customer_name",
+              "displayName": "customer_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "order_date",
+              "displayName": "order_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "order_state",
+              "displayName": "order_state",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "total_amount",
+              "displayName": "total_amount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_tax",
+              "displayName": "total_tax",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "payment_type",
+              "displayName": "payment_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total_discount",
+              "displayName": "total_discount",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "skipOnConflict": true
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        400,
+        0
+      ],
+      "id": "8954b521-65ba-48cb-8747-e1325b90509d",
+      "name": "Inserting data to PostgreSQL Database",
+      "credentials": {
+        "postgres": {
+          "id": "sxNHbBZigeezOuLl",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.date = $input.first().json['timestamp'].split(\"T\");\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -920,
+        160
+      ],
+      "id": "b0a8a506-197b-4380-87c1-9f7a568118cd",
+      "name": "Get current date from the schedule trigger"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "line_items",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        0,
+        180
+      ],
+      "id": "0dfaf516-8147-48f5-9bc5-01afb6f5e976",
+      "name": "Split Out every item from each orders from Square"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Get payment status (success or not)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Split Out every item from each orders from Square",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute query": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "PGVector",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PGVector": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get current date from the schedule trigger",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Getting the Data from the business' Square account": {
+      "main": [
+        [
+          {
+            "node": "Split Out the items from square",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out the items from square": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parsing attributes that revolves with money from each items": {
+      "main": [
+        [
+          {
+            "node": "Insert line item to the PostgreSQL Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert line item to the PostgreSQL Database": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get payment status (success or not)": {
+      "main": [
+        [
+          {
+            "node": "Parsing attributes that revolves with money from each items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parsing attributes that revolves with money from each items1": {
+      "main": [
+        [
+          {
+            "node": "Inserting data to PostgreSQL Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get current date from the schedule trigger": {
+      "main": [
+        [
+          {
+            "node": "Getting the Data from the business' Square account",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out every item from each orders from Square": {
+      "main": [
+        [
+          {
+            "node": "Parsing attributes that revolves with money from each items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Australia/Sydney",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "b07526ce-3e7d-428e-b264-f42ca4279210",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "495a13a5d42c7b485cf46fbbe7025fff19e883075b949297dd8a43f473371f92"
+  },
+  "id": "lbL2OH3FEA6gS6tS",
+  "tags": []
+}

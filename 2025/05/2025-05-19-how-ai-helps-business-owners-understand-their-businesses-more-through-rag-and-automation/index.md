@@ -59,6 +59,8 @@ Now that our overview and assumptions are handled, let’s begin!
 
 In the beginning, it is good to know what the tools and environments that we will be dealing before we start. Below is an image for the workflow that we will be using. The file is also attached, and you just need to download it and import it in your n8n instance for now to follow this tutorial.
 
+[Download the PDF version](images/Main_Workflow.json)
+
 
 ![](images/image-1.jpg)
 This image is made by the Author from n8n localhost.
