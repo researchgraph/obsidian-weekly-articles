@@ -1,8 +1,8 @@
 # How AI Transforms Mental Wellness: From Applications to Essential Questions
 
-<figure>
-  <img src="images/coverImage.png" alt="Cover image" width="600">
-  <figcaption>Cover image "ai in mental health support", created by gpt-4o May 19 2025 <i>formatting</i></figcaption>
+<figure style="text-align: center;">
+  <img src="images/coverImage.png" alt="Cover image" width="600" style="margin: 0 auto; display: block;">
+  <figcaption>Cover image "ai in mental health support", created by gpt-4o May 19 2025 <i>formatted text</i>.</figcaption>
 </figure>
 
 ## Introduction
@@ -113,4 +113,4 @@ Zhu, T., & Jing, X. (2025). The first trial of generative AI therapy shows it mi
 
 ---
 
-*This blog post represents personal reflections and does not constitute medical advice. The effectiveness of AI mental health tools varies widely, and research in this field is still emerging. While some studies show promising results, many applications lack robust, independent verification. If you're experiencing mental health challenges, please consult with qualified healthcare professionals. AI tools should be viewed as potential complements to, not replacements for, professional care. Always prioritize your privacy when using digital mental health applications and carefully review their data policies.*
+*Disclaimer: This blog post represents personal reflections and does not constitute medical advice. The effectiveness of AI mental health tools varies widely, and research in this field is still emerging. While some studies show promising results, many applications lack robust, independent verification. If you're experiencing mental health challenges, please consult with qualified healthcare professionals. AI tools should be viewed as potential complements to, not replacements for, professional care. Always prioritize your privacy when using digital mental health applications and carefully review their data policies.*
