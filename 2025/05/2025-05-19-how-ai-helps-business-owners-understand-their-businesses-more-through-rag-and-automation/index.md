@@ -389,5 +389,23 @@ This image is made by the Author from n8n localhost.
 
 And that’s it! Your workflow now is all set up and you can ask your n8n workflow questions about your business such as below.
 
+## Usage Example
+Click the **Test Workflow** button to input all of your data from **Square** to the **PostgreSQL** database.
+
+![](images/image-33.jpg)
+This image is made by the Author from n8n localhost.
+
+Then all you have to do is Click the **Open Chat** button and start chatting with your businesses' financial data! Example being as below. With the question being 
+```
+what is the total sales so far?
+```
+
+this should result in 77$ based on the orders that we have inputted just now. Below is the result.
+
+![](images/image-34.jpg)
+This image is made by the Author from n8n localhost.
+
+That's done!
+
 ## Conclusion
 This setup leverages RAG and automation to transform raw data into actionable insights, helping business owners make informed decisions. While powerful, it requires technical setup and possibly API costs. For small businesses, this system can be a game-changer, aligning with trends in AI-driven analytics.
