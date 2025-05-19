@@ -20,6 +20,12 @@ AI mental health tools currently fall into several distinct categories, each add
 
 1. **Therapeutic Chatbots**: Tools like [Woebot](https://woebothealth.com/) (2017) deliver text-based cognitive-behavioral therapy, helping users identify and challenge negative thought patterns ([IEEE Spectrum, 2024](https://spectrum.ieee.org/woebot)). Dartmouth's Therabot demonstrated significant symptom reductions in the first randomized clinical trial for a generative AI therapy chatbot ([NEJM AI, 2025](https://ai.nejm.org/doi/full/10.1056/AIoa2400802)).
 
+<p align="center">
+  <img src="images/woebot.png" width="600">
+  <br>
+  <em>Figure 2. Woebot interface, retrieved from https://www.google.com/url?sa=i&url=https%3A%2F%2Fwoebot.en.aptoide.com%2Fapp&psig=AOvVaw2yez8YHBWUdGEdhgd3to_1&ust=1747717871100000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPCBgM7iro0DFQAAAAAdAAAAABAL</em>
+</p>
+
 2. **Emotion Monitoring Applications**: Tools like [Earkick](https://earkick.com/) track mental health in real-time through voice patterns, typing behavior, and environmental data. With 40,000 users reporting 32% anxiety reduction and 34% mood improvement ([Earkick Blog, 2024](https://blog.earkick.com/earkick-ai-powered-mental-health-support/)), these tools enhance emotional awareness and enable timely interventions.
 
 3. **Virtual Reality Therapeutic Environments**: Cedars-Sinai's XAIA offers therapy sessions with AI avatars in calming virtual environments. Launched in 2024 on Apple Vision Pro, it has shown promising results in studies published in Nature Digital Medicine ([Cedar-Sinai, 2024](https://www.cedars-sinai.org/newsroom/study-mental-health-gets-a-boost-from-artificial-intelligence/)).
