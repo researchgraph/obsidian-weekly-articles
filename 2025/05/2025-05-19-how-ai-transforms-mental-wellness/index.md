@@ -1,9 +1,10 @@
 # How AI Transforms Mental Wellness: From Applications to Essential Questions
 
-<figure style="text-align: center;">
-  <img src="images/coverImage.png" alt="Cover image" width="600" style="margin: 0 auto; display: block;">
-  <figcaption>Cover image "ai in mental health support", created by gpt-4o May 19 2025 <i>formatted text</i>.</figcaption>
-</figure>
+<p align="center">
+  <img src="images/coverImage.png" width="600">
+  <br>
+  <em>Figure 1. Cover image "ai in mental health support", created by gpt-4o May 19 2025</em>
+</p>
 
 ## Introduction
 
