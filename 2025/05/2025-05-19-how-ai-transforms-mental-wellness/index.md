@@ -1,5 +1,10 @@
 # How AI Transforms Mental Wellness: From Applications to Essential Questions
 
+<figure>
+  <img src="images/coverImage.png" alt="Cover image" width="600">
+  <figcaption>Cover image "ai in mental health support", created by gpt-4o May 19 2025 <i>formatting</i></figcaption>
+</figure>
+
 ## Introduction
 
 The global mental health landscape faces staggering treatment gaps. Nearly 970 million people—one in eight worldwide—live with a mental disorder ([WHO, 2022](https://www.who.int/news-room/fact-sheets/detail/mental-disorders)), yet treatment gaps exceed 50% globally and approach 90% in least resourced regions ([PAHO, 2023](https://www.paho.org/en/topics/mental-health-primary-care)).
@@ -18,31 +23,44 @@ AI mental health tools currently fall into several distinct categories, each add
 
 3. **Virtual Reality Therapeutic Environments**: Cedars-Sinai's XAIA offers therapy sessions with AI avatars in calming virtual environments. Launched in 2024 on Apple Vision Pro, it has shown promising results in studies published in Nature Digital Medicine ([Cedar-Sinai, 2024](https://www.cedars-sinai.org/newsroom/study-mental-health-gets-a-boost-from-artificial-intelligence/)).
 
-4. **Intelligent Psychological Assessment Systems**: Tools like DeepDepression identify mental health conditions by analyzing voice patterns with 80%+ accuracy ([Scientific Reports, 2024](https://www.nature.com/articles/s41598-024-63556-0)), while Mindstrong Health predicts mood fluctuations based on smartphone usage patterns ([Scientific American, 2024](https://www.scientificamerican.com/article/can-a-mood-predicting-smartphone-app-work/)).
+4. **Intelligent Psychological Assessment Systems**: Tools like DeepDepression identify mental health conditions by analyzing voice patterns with 80%+ accuracy ([Scientific Reports, 2024](https://www.nature.com/articles/s41598-024-63556-0)), while Mindstrong Health predicts mood fluctuations based on smartphone usage patterns ([Scientific American, 2024](https://www.scientificamerican.com/article/can-a-mood-predicting-smartphone-app-work/)). Tian et al.,(2024) also leverage deep learning to identify cues for potential depression through pattern recognition in text analysis.  
 
 These tools deploy through three models: direct-to-consumer (maximizing accessibility), clinical augmentation (working alongside professionals), and institutional implementations (integrated within healthcare systems with rigorous evaluation).
 
 ## Unique Advantages of AI in Mental Wellness Support
 
 ### Breaking Traditional Barriers
+
 • 24/7 accessibility, particularly valuable during off-hours
+
 • Affordability compared to traditional therapy ($100-200 per session)
+
 • Geographic reach for underserved areas (over 25 million rural Americans live in Mental Health Professional Shortage Areas; [NAMI, 2023](https://www.nami.org/about-mental-illness/mental-health-by-the-numbers/))
+
 • Scalability to address the fundamental supply-demand mismatch in mental healthcare
 
 ### The Judgment-Free Zone Effect
+
 • Reduced defensiveness facilitating more honest disclosures
+
 • Lower stigma barriers to initial engagement
+
 • Consistent responses without therapist fatigue or burnout
 
 ### Data-Driven Insights
+
 • Pattern recognition across time periods to identify subtle trends
+
 • Integration with physiological metrics from health-tracking devices
+
 • Personalization based on accumulated data
 
 ### Crisis Bridging and Safety Net Functions
+
 • Support during off-hours when therapists are unavailable
+
 • Skills practice between human therapy sessions
+
 • Guided exercises with immediate feedback
 
 ## Fundamental Limitations and Human Elements
@@ -76,6 +94,22 @@ The professional landscape is also likely to change, with AI potentially disrupt
 The future of mental healthcare lies not in choosing between technological and human approaches but in thoughtfully integrating both. My vision is for a mental healthcare ecosystem where technology expands access to evidence-based support while human providers focus their unique capabilities on complex therapeutic work requiring wisdom, presence, and authentic connection. In this vision, AI serves not as a godlike entity but as "an equal tool, truly helping users redesign themselves with self-determination rights."
 
 This collaborative approach honors both technological possibility and human dignity, working toward a future where mental healthcare becomes more accessible, effective, and human.
+
+## Reference
+
+Dagum, P. (2024). Depression recognition using voice-based pre-training model. *Scientific Reports*, 41(598). https://www.nature.com/articles/s41598-024-63556-0
+
+Heinz, M., & Jacobson, N. (2025). Randomized Trial of a Generative AI Chatbot for Mental Health Treatment. *NEJM AI*. https://ai.nejm.org/doi/full/10.1056/AIoa2400802
+
+Olawade, D. B., et al. (2022). Mental disorders. *World Health Organization*. https://www.who.int/news-room/fact-sheets/detail/mental-disorders
+
+Spiegel, B., & Liran, O. (2024). Feasibility of combining spatial computing and AI for mental health support in anxiety and depression. *Nature Digital Medicine*. https://www.nature.com/articles/s41746-024-01011-0
+
+Tian, H., Zhu, Z. & Jing, X. Deep learning for Depression Recognition from Speech. Mobile Netw Appl 29, 1212–1227 (2024). https://doi.org/10.1007/s11036-022-02086-3
+
+Wright, V. (2025). The AI therapist can see you now. *NPR Shots - Health News*. https://www.npr.org/sections/shots-health-news/2025/04/07/nx-s1-5351312/artificial-intelligence-mental-health-therapy
+
+Zhu, T., & Jing, X. (2025). The first trial of generative AI therapy shows it might help with depression. *MIT Technology Review*. https://www.technologyreview.com/2025/03/28/1114001/the-first-trial-of-generative-ai-therapy-shows-it-might-help-with-depression/
 
 ---
 
